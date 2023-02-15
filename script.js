@@ -37,7 +37,9 @@ function playGame() {
 
     if (score > 1) {
         return 'You won the game!';
-    } else {
+    } else if (score < 0) {
         return 'You lost the game...';
+    } else {
+        return 'You tied the game.';
     }
 }
