@@ -2,6 +2,9 @@ const rockBtn = document.querySelector('#rock');
 const paperBtn = document.querySelector('#paper');
 const scissorsBtn = document.querySelector('#scissors');
 
+const playerScore = document.querySelector('#player-score');
+const cpuScore = document.querySelector('#cpu-score');
+
 function getComputerChoice() {
     const choices = ['rock', 'paper', 'scissors'];
     let index = Math.floor(Math.random() * choices.length);
@@ -23,20 +26,20 @@ function playRound(playerChoice, computerChoice) {
     }
 }
 
-function playGame() {
-    let score = 0;
-
-    if (score > 1) {
-        return 'You won the game!';
-    } else if (score < 0) {
-        return 'You lost the game...';
-    } else {
-        return 'You tied the game.';
-    }
-}
-
 rockBtn.addEventListener('click', function () {
-    alert('Rock');
+    const outcome = playRound('rock', getComputerChoice());
+
+    switch (outcome) {
+        case 0:
+            alert('tie');
+            break;
+        case 1:
+            playerScore.textContent = '1';
+            break;
+        case -1:
+            cpuScore.textContent = '1';
+            break;
+    }
 });
 
 paperBtn.addEventListener('click', function () {
