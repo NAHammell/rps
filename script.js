@@ -1,3 +1,7 @@
+const rockBtn = document.querySelector('#rock');
+const paperBtn = document.querySelector('#paper');
+const scissorsBtn = document.querySelector('#scissors');
+
 function getComputerChoice() {
     const choices = ['rock', 'paper', 'scissors'];
     let index = Math.floor(Math.random() * choices.length);
@@ -22,19 +26,6 @@ function playRound(playerChoice, computerChoice) {
 function playGame() {
     let score = 0;
 
-    for (let i = 0; i < 5; i ++) {
-        let outcome = playRound(prompt(), getComputerChoice());
-        if (outcome === 1) {
-            score++;
-            console.log('You won!');
-        } else if (outcome === -1) {
-            score--;
-            console.log('You lost...');
-        } else {
-            console.log('You tied.');
-        }
-    }
-
     if (score > 1) {
         return 'You won the game!';
     } else if (score < 0) {
@@ -43,3 +34,15 @@ function playGame() {
         return 'You tied the game.';
     }
 }
+
+rockBtn.addEventListener('click', function () {
+    alert('Rock');
+});
+
+paperBtn.addEventListener('click', function () {
+    alert('Paper');
+});
+
+scissorsBtn.addEventListener('click', function () {
+    alert('Scissors');
+});
