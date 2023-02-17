@@ -4,6 +4,7 @@ const scissorsBtn = document.querySelector('#scissors');
 
 const playerScore = document.querySelector('#player-score');
 const cpuScore = document.querySelector('#cpu-score');
+const result = document.querySelector('#result');
 
 let playerWins = 0;
 let cpuWins = 0;
@@ -42,6 +43,12 @@ function playRound(playerChoice, computerChoice) {
             playerWins += 1;
             playerScore.textContent = playerWins;
         }
+    }
+
+    if (playerWins === 5) {
+        result.textContent = 'You have 5 points, you win!';
+    } else if (cpuWins === 5) {
+        result.textContent = 'The CPU has 5 points, you lose...';
     }
 }
 
