@@ -5,6 +5,9 @@ const scissorsBtn = document.querySelector('#scissors');
 const playerScore = document.querySelector('#player-score');
 const cpuScore = document.querySelector('#cpu-score');
 
+let playerWins = 0;
+let cpuWins = 0;
+
 function getComputerChoice() {
     const choices = ['rock', 'paper', 'scissors'];
     let index = Math.floor(Math.random() * choices.length);
@@ -13,39 +16,43 @@ function getComputerChoice() {
 }
 
 function playRound(playerChoice, computerChoice) {
-    if (playerChoice.toLowerCase() !== 'rock' && playerChoice.toLowerCase() !== 'paper' && playerChoice.toLowerCase() !== 'scissors') {
-        return 'Invalid input';
-    }
+    if (playerChoice === computerChoice) {
 
-    if (playerChoice.toLowerCase() === computerChoice) {
-        return 0;
-    } else if ((playerChoice.toLowerCase() === 'rock' && computerChoice === 'scissors') || (playerChoice.toLowerCase() === 'paper' && computerChoice === 'rock') || (playerChoice === 'scissors' && computerChoice === 'paper')) {
-        return 1;
-    } else {
-        return -1;
+    } else if (playerChoice === 'rock') {
+        if (computerChoice === 'paper') {
+            cpuWins += 1;
+            cpuScore.textContent = cpuWins;
+        } else {
+            playerWins += 1;
+            playerScore.textContent = playerWins;
+        }
+    } else if (playerChoice === 'paper') {
+        if (computerChoice === 'scissors') {
+            cpuWins += 1;
+            cpuScore.textContent = cpuWins;
+        } else {
+            playerWins += 1;
+            playerScore.textContent = playerWins;
+        }
+    } else if (playerChoice === 'scissors') {
+        if (computerChoice === 'rock') {
+            cpuWins += 1;
+            cpuScore.textContent = cpuWins;
+        } else {
+            playerWins += 1;
+            playerScore.textContent = playerWins;
+        }
     }
 }
 
 rockBtn.addEventListener('click', function () {
-    const outcome = playRound('rock', getComputerChoice());
-
-    switch (outcome) {
-        case 0:
-            alert('tie');
-            break;
-        case 1:
-            playerScore.textContent = '1';
-            break;
-        case -1:
-            cpuScore.textContent = '1';
-            break;
-    }
+    playRound('rock', getComputerChoice());
 });
 
 paperBtn.addEventListener('click', function () {
-    alert('Paper');
+    playRound('paper', getComputerChoice());
 });
 
 scissorsBtn.addEventListener('click', function () {
-    alert('Scissors');
+    playRound('scissors', getComputerChoice());
 });
