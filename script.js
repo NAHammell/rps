@@ -17,6 +17,10 @@ function getComputerChoice() {
 }
 
 function playRound(playerChoice, computerChoice) {
+    if (playerWins >= 5 || cpuWins >= 5) {
+        return;
+    }
+
     if (playerChoice === computerChoice) {
 
     } else if (playerChoice === 'rock') {

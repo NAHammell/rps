@@ -5,17 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="stylesheet" href="./styles.css">
     <script src="./script.js" defer></script>
 
     <title>RPS</title>
 </head>
 <body>
-    <button id="rock">Rock</button>
-    <button id="paper">Paper</button>
-    <button id="scissors">Scissors</button>
+    <div id="wrapper">
+        <div id="player-side">
+            <p id="player-score"></p>
+        </div>
 
-    <p id="player-score">0</p>
-    <p id="cpu-score">0</p>
-    <p id="result"></p>
+        <div id="center-ui">
+            <p id="result"></p>
+            <div id="player-buttons">
+                <button id="rock"><img src="./assets/fist.png" alt="rock" class="btn-icon"></button>
+                <button id="paper"><img src="./assets/hand-palm.png" alt="paper" class="btn-icon"></button>
+                <button id="scissors"><img src="./assets/peace.png" alt="scissors" class="btn-icon"></button>
+            </div>
+        </div>
+
+        <div id="cpu-side">
+            <p id="cpu-score"></p>
+        </div>
+    </div>
 </body>
 </html>
