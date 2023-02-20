@@ -8,15 +8,17 @@
 }
 
 #player-side,
+#cpu-side {
+    width: 256px;
+}
+
+#player-side,
 #cpu-side, 
 #center-ui {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
-
-
 
 .btn-icon {
     height: auto;
