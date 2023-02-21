@@ -7,20 +7,58 @@
     display: flex;
 }
 
-#player-side,
-#cpu-side {
-    width: 256px;
-}
-
-#player-side,
-#cpu-side, 
-#center-ui {
+#player-side {
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     align-items: center;
+    width: 400px;
+    height: 200px;
+    background-color: red;
+    border-radius: 4px;
+    box-shadow: 0px 2px black;
+}
+
+#info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: start;
+    width: 400px;
+}
+
+#nametag {
+    margin-left: 32px;
+    margin-right: auto;
+    font-size: 24px;
+}
+
+#score-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 24px;
+    margin-right: 32px;
+    background-color: green;
+}
+
+#score-circle p {
+    font-size: 24px;
+    color: white;
+}
+
+#buttons {
+    display: flex;
+    gap: 64px;
+}
+
+.chosen {
+    background-color: rgba(0, 0, 255, 50%);
 }
 
 .btn-icon {
     height: auto;
-    width: 128px;
+    width: 64px;
 }
