@@ -8,6 +8,7 @@ const cpuScissors = document.querySelector('#cpu-scissors');
 
 const playerScore = document.querySelector('#player-score');
 const cpuScore = document.querySelector('#cpu-score');
+const results = document.querySelector('#results');
 
 let playerWins = 0;
 let cpuWins = 0;
@@ -30,37 +31,43 @@ function playRound(playerChoice, computerChoice) {
         this.classList.add('chosen');
     
         if (playerChoice === computerChoice) {
-    
+            results.textContent = `${playerChoice} vs ${computerChoice}, it's a tie.`;
         } else if (playerChoice === 'rock') {
             if (computerChoice === 'paper') {
+                results.textContent = `${computerChoice} beats ${playerChoice}, CPU won.`
                 cpuWins += 1;
                 cpuScore.textContent = cpuWins;
             } else {
+                results.textContent = `${playerChoice} beats ${computerChoice}, you win.`;
                 playerWins += 1;
                 playerScore.textContent = playerWins;
             }
         } else if (playerChoice === 'paper') {
             if (computerChoice === 'scissors') {
+                results.textContent = `${computerChoice} beats ${playerChoice}, CPU won.`
                 cpuWins += 1;
                 cpuScore.textContent = cpuWins;
             } else {
+                results.textContent = `${playerChoice} beats ${computerChoice}, you win.`;
                 playerWins += 1;
                 playerScore.textContent = playerWins;
             }
         } else if (playerChoice === 'scissors') {
             if (computerChoice === 'rock') {
+                results.textContent = `${computerChoice} beats ${playerChoice}, CPU won.`
                 cpuWins += 1;
                 cpuScore.textContent = cpuWins;
             } else {
+                results.textContent = `${playerChoice} beats ${computerChoice}, you win.`;
                 playerWins += 1;
                 playerScore.textContent = playerWins;
             }
         }
     
         if (playerWins === 5) {
-            result.textContent = 'You have 5 points, you win!';
+            results.textContent = 'You have 5 points, you win!';
         } else if (cpuWins === 5) {
-            result.textContent = 'The CPU has 5 points, you lose...';
+            results.textContent = 'The CPU has 5 points, you lose...';
         }
     }
 }
