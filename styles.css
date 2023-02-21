@@ -1,6 +1,7 @@
 * {
     padding: 0;
     margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #wrapper {
@@ -14,9 +15,10 @@
     align-items: center;
     width: 400px;
     height: 200px;
-    background-color: red;
-    border-radius: 4px;
-    box-shadow: 0px 2px black;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 2px;
+    box-shadow: 0px 2px 2px gray;
 }
 
 #info {
@@ -41,7 +43,7 @@
     height: 48px;
     border-radius: 24px;
     margin-right: 32px;
-    background-color: green;
+    background-color: rgb(40, 145, 255);
 }
 
 #score-circle p {
@@ -54,8 +56,18 @@
     gap: 64px;
 }
 
+#buttons button {
+    padding: 4px;
+    border: 2px solid rgba(0, 0, 0, 85%);
+    border-radius: 4px;
+}
+
 .chosen {
-    background-color: rgba(0, 0, 255, 50%);
+    background-color: rgb(40, 145, 255);
+}
+
+.cpu-chosen {
+    background-color: rgb(255, 40, 40);
 }
 
 .btn-icon {

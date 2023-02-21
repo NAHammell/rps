@@ -1,13 +1,9 @@
-const rockBtn = document.querySelector('#rock');
-const paperBtn = document.querySelector('#paper');
-const scissorsBtn = document.querySelector('#scissors');
-
-const playerChoiceIcon = document.querySelector('#player-choice');
-const cpuChoiceIcon = document.querySelector('#cpu-choice');
+const playerRock = document.querySelector('#rock');
+const playerPaper = document.querySelector('#paper');
+const playerScissors = document.querySelector('#scissors');
 
 const playerScore = document.querySelector('#player-score');
 const cpuScore = document.querySelector('#cpu-score');
-const result = document.querySelector('#result');
 
 let playerWins = 0;
 let cpuWins = 0;
@@ -20,6 +16,12 @@ function getComputerChoice() {
 }
 
 function playRound(playerChoice, computerChoice) {
+    playerChoice = this.id;
+    computerChoice = getComputerChoice();
+
+    removeUserHighlight();
+    this.classList.add('chosen');
+
     if (playerChoice === computerChoice) {
 
     } else if (playerChoice === 'rock') {
@@ -55,35 +57,13 @@ function playRound(playerChoice, computerChoice) {
     }
 }
 
-rockBtn.addEventListener('click', function () {
-    if (playerWins < 5 && cpuWins < 5) {
-        cpuChoice = getComputerChoice();
+function removeUserHighlight() {
+    playerRock.classList.remove('chosen');
+    playerPaper.classList.remove('chosen');
+    playerScissors.classList.remove('chosen');
+}
 
-        playerChoiceIcon.src = './assets/rock.png';
-        cpuChoiceIcon.src = `./assets/${cpuChoice}.png`;
+playerRock.addEventListener('click', playRound);
+playerPaper.addEventListener('click', playRound);
+playerScissors.addEventListener('click', playRound);
 
-        playRound('rock', cpuChoice);
-    }
-});
-
-paperBtn.addEventListener('click', function () {
-    if (playerWins < 5 && cpuWins < 5) {
-        cpuChoice = getComputerChoice();
-
-        playerChoiceIcon.src = './assets/paper.png';
-        cpuChoiceIcon.src = `./assets/${cpuChoice}.png`;
-
-        playRound('paper', cpuChoice);
-    }
-});
-
-scissorsBtn.addEventListener('click', function () {
-    if (playerWins < 5 && cpuWins < 5) {
-        cpuChoice = getComputerChoice();
-
-        playerChoiceIcon.src = './assets/scissors.png';
-        cpuChoiceIcon.src = `./assets/${cpuChoice}.png`;
-
-        playRound('scissors', cpuChoice);
-    }
-});
