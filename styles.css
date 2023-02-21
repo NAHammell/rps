@@ -8,7 +8,8 @@
     display: flex;
 }
 
-#player-side {
+#player-side,
+#cpu-side {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -30,7 +31,7 @@
 }
 
 #nametag {
-    margin-left: 32px;
+    margin-left: 24px;
     margin-right: auto;
     font-size: 24px;
 }
@@ -42,8 +43,12 @@
     width: 48px;
     height: 48px;
     border-radius: 24px;
-    margin-right: 32px;
+    margin-right: 24px;
     background-color: rgb(40, 145, 255);
+}
+
+#cpu-side #score-circle {
+    background-color: rgb(255, 40, 40);
 }
 
 #score-circle p {
